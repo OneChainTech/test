@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex 测试页</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      background: #151b19;
+      color: #f4f2e5;
+      font-family: ui-monospace, monospace;
+    }
+    body { margin: 0; padding: clamp(1.5rem, 8vw, 8rem); }
+    main { max-width: 48rem; border-top: 4px solid #c6f36d; }
+    .label { color: #c6f36d; letter-spacing: .14em; }
+    h1 { font-size: clamp(2.25rem, 8vw, 5rem); margin: .6em 0 .3em; }
+    p { line-height: 1.65; }
+    button {
+      border: 0;
+      padding: .8em 1.1em;
+      background: #c6f36d;
+      color: #151b19;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #e1ffa5; }
+    button:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+    #result { color: #c6f36d; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="label">ONECHAINTECH / TEST</p>
+    <h1>Codex 测试页</h1>
+    <p>页面已加载。点击下方按钮，验证 JavaScript 交互。</p>
+    <button id="run" type="button">运行测试</button>
+    <p id="result" role="status">等待运行</p>
+  </main>
+  <script>
+    document.querySelector('#run').addEventListener('click', () => {
+      document.querySelector('#result').textContent = '测试通过：点击事件已触发。';
+    });
+  </script>
+</body>
+</html>
